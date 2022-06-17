@@ -12,6 +12,10 @@ module.exports = {
             template: join(__dirname, 'public/index.html')
         })
     ],
+    devServer: {
+        port: 30000,
+        open: true
+    },
     module: {
         rules: [{
             test: /\.css$/i,
@@ -39,6 +43,10 @@ module.exports = {
             generator: {
                 filename: 'fonts/[hash:6][ext]'
             }
+        },
+        {
+            test: /\.js$/i,
+            use: ["babel-loader"]
         }
 
         ]
