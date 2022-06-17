@@ -9,7 +9,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: join(__dirname, 'public/index.html')
+            template: join(__dirname, 'publick/index.html')
         })
     ],
     devServer: {
