@@ -7,7 +7,7 @@ module.exports = {
         path: join(__dirname, 'lib'),
         filename: 'index.js'
     },
-    Plugins: [
+    plugins: [
         new HtmlWebpackPlugin({
             template: join(__dirname, 'public/index.html')
         })
