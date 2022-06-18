@@ -1,7 +1,9 @@
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const { join } = require('path')
 module.exports = {
+    mode: 'development',
     entry: './src/main.js',
     output: {
         path: join(__dirname, 'lib'),
@@ -10,7 +12,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: join(__dirname, 'publick/index.html')
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     devServer: {
         port: 30000,
@@ -47,6 +50,10 @@ module.exports = {
         {
             test: /\.js$/i,
             use: ["babel-loader"]
+        },
+        {
+            test: /\.vue/i,
+            use: ['vue-loader']
         }
 
         ]
